@@ -1,0 +1,38 @@
+---
+import { site } from '../data/content';
+---
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-logo">OHM</div>
+    <div class="footer-copy">© {site.year} {site.name} · Corrientes, AR</div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(212,160,23,0.1);
+    padding: 2.5rem var(--pad-x);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: var(--hero-serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .footer-copy {
+    font-family: var(--condensed);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+  }
+</style>

@@ -1,0 +1,62 @@
+---
+import { stats } from '../data/content';
+---
+<div class="stats-band">
+  <div class="stats-container container">
+    {stats.map((s, i) => (
+      <>
+        <div class="stat-item">
+          <span class="stat-num">{s.value}</span>
+          <span class="stat-label">{s.label}</span>
+        </div>
+        {i < stats.length - 1 && <div class="stat-divider" aria-hidden="true" />}
+      </>
+    ))}
+  </div>
+</div>
+
+<style>
+  .stats-band {
+    background-color: var(--black);
+    background-image: var(--dots);
+    background-size: var(--dots-size);
+    border-top: 1px solid rgba(212,160,23,0.15);
+    border-bottom: 1px solid rgba(212,160,23,0.15);
+    padding: 2.5rem var(--pad-x);
+  }
+
+  .stats-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .stat-num {
+    font-family: var(--hero-serif);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: var(--condensed);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 3rem;
+    background: rgba(212,160,23,0.2);
+    margin: 0 2rem;
+  }
+</style>

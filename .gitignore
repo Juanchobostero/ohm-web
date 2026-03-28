@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+pnpm-debug.log
+
+# Build output
+dist/
+*.log
+
+# Astro build cache
+.astro/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE & editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+.DS_Store
+Thumbs.db
+
+# OS
+.DS_Store
+Thumbs.db

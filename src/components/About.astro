@@ -1,0 +1,103 @@
+---
+import { about } from '../data/content';
+---
+<section id="about">
+  <div class="container about-grid reveal">
+    <div class="about-text">
+      <div class="section-tag">{about.sectionTag}</div>
+      <h2 class="section-title">
+        {about.title}<br>
+        <em>{about.titleEm}</em> {about.titleEnd}
+      </h2>
+      {about.paragraphs.map(p => <p>{p}</p>)}
+    </div>
+
+    <div class="about-box">
+      <div class="coverage-title">Zona de cobertura</div>
+      <ul class="coverage-list">
+        {about.coverage.map(item => <li>{item}</li>)}
+      </ul>
+      <div class="box-divider"></div>
+      <div class="coverage-title">Certificaciones</div>
+      <ul class="coverage-list">
+        {about.certifications.map(item => <li>{item}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  #about {
+    background-color: var(--black-2);
+    background-image: var(--dots-dim);
+    background-size: var(--dots-size);
+    padding: 7rem var(--pad-x);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--white-dim);
+    line-height: 1.8;
+    margin-top: 1.5rem;
+  }
+  .about-text p strong { color: var(--white); font-weight: 500; }
+
+  .about-box {
+    background: var(--black-3);
+    border: 1px solid rgba(212,160,23,0.15);
+    padding: 3rem;
+    position: relative;
+  }
+  .about-box::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 2rem; right: 2rem;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .coverage-title {
+    font-family: var(--condensed);
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .coverage-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .coverage-list li {
+    font-size: 0.9rem;
+    color: var(--white-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .coverage-list li::before {
+    content: '';
+    display: block;
+    width: 6px; height: 6px;
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .box-divider {
+    margin: 2rem 0;
+    height: 1px;
+    background: rgba(212,160,23,0.1);
+  }
+</style>
