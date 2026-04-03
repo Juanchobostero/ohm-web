@@ -124,4 +124,59 @@ import { portfolio } from '../data/content';
     color: var(--gold);
     margin-top: 0.3rem;
   }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    #portfolio {
+      padding: 4rem var(--pad-x);
+    }
+
+    .portfolio-header {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    .portfolio-header a {
+      width: 100%;
+      text-align: center;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.7rem;
+    }
+
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 1px;
+    }
+
+    .portfolio-item {
+      aspect-ratio: 4/3;
+    }
+
+    .portfolio-item.featured {
+      grid-row: unset;
+      aspect-ratio: 4/3;
+    }
+
+    .portfolio-overlay h4 {
+      font-size: 1rem;
+    }
+
+    .portfolio-overlay p {
+      font-size: 0.6rem;
+    }
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .portfolio-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .portfolio-item.featured {
+      grid-row: span 1;
+      grid-column: span 1;
+    }
+  }
 </style>

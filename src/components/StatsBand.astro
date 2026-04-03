@@ -59,4 +59,33 @@ import { stats } from '../data/content';
     background: rgba(212,160,23,0.2);
     margin: 0 2rem;
   }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    .stats-band {
+      padding: 1.5rem var(--pad-x);
+    }
+
+    .stats-container {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .stat-item {
+      flex: 1 1 calc(50% - 0.75rem);
+      min-width: 120px;
+    }
+
+    .stat-num {
+      font-size: 2rem;
+    }
+
+    .stat-label {
+      font-size: 0.6rem;
+    }
+
+    .stat-divider {
+      display: none;
+    }
+  }
 </style>

@@ -100,4 +100,35 @@ import { about } from '../data/content';
     height: 1px;
     background: rgba(212,160,23,0.1);
   }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    #about {
+      padding: 4rem var(--pad-x);
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 0.9rem;
+      margin-top: 1.2rem;
+    }
+
+    .about-box {
+      padding: 2rem;
+      background: var(--black-3);
+    }
+
+    .coverage-list {
+      gap: 0.6rem;
+    }
+
+    .coverage-list li {
+      font-size: 0.85rem;
+    }
+  }
 </style>

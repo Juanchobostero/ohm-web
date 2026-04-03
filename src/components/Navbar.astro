@@ -83,4 +83,25 @@
     text-decoration: none;
   }
   .nav-cta:hover { background: var(--gold); color: var(--black); }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem var(--pad-x);
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .nav-cta {
+      font-size: 0.65rem;
+      padding: 0.45rem 1rem;
+    }
+  }
 </style>

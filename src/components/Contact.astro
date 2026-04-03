@@ -177,4 +177,66 @@ import { site, contact } from '../data/content';
     margin-bottom: 0.4rem;
   }
   .ci-value { font-size: 1rem; color: var(--white-dim); font-weight: 300; }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    #contact {
+      padding: 4rem var(--pad-x);
+    }
+
+    #contact::before {
+      font-size: 10rem;
+      bottom: -1rem;
+      right: -3rem;
+    }
+
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .contact-left p {
+      max-width: 100%;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .contact-channels {
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-btn {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.75rem;
+      padding: 1rem;
+    }
+
+    .cb-arrow {
+      margin-left: 0;
+    }
+
+    .contact-info-block {
+      border-left: none;
+      border-top: 1px solid rgba(212,160,23,0.2);
+      padding-left: 0;
+      padding-top: 2rem;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .contact-info-block {
+      border-left: none;
+      border-top: 1px solid rgba(212,160,23,0.2);
+      padding-left: 0;
+      padding-top: 2rem;
+    }
+  }
 </style>

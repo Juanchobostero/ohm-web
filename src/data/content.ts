@@ -11,8 +11,8 @@ export const site = {
   location: 'Corrientes, Argentina',
   year: 2026,
   whatsapp: '+549XXXXXXXXXX',   // ← reemplazar
-  email: 'contacto@ohmelectromecanica.com', // ← reemplazar
-  googleForm: 'https://forms.google.com',   // ← reemplazar con el link real
+  email: 'ohm.ingelectromecanica@gmail.com', // ← reemplazar
+  googleForm: 'https://forms.gle/2ToMMXqacap8Y9Zc8',   // ← reemplazar con el link real
 };
 
 export const stats = [
@@ -38,7 +38,6 @@ export const about = {
   certifications: [
     'Instalaciones bajo normas AEA 90364',
     'Habilitados ante DPEC',
-    'Ingenieros matriculados',
   ],
 };
 
@@ -64,16 +63,16 @@ export const services = [
 ];
 
 export const portfolio = [
-  { title: 'Planta Industrial – Corrientes', category: 'Instalación eléctrica completa', year: 2024, image: '/images/portfolio/proyecto-1.jpg', featured: true },
-  { title: 'Tablero de Comando',             category: 'Fabricación a medida',           year: 2024, image: '/images/portfolio/proyecto-2.jpg' },
-  { title: 'Local Comercial',                category: 'Instalación comercial',           year: 2023, image: '/images/portfolio/proyecto-3.jpg' },
-  { title: 'Galpón Industrial',              category: 'Interior Corrientes',             year: 2023, image: '/images/portfolio/proyecto-4.jpg' },
-  { title: 'Edificio Corporativo',           category: 'Corrientes Capital',              year: 2023, image: '/images/portfolio/proyecto-5.jpg' },
+  { title: 'Planta Industrial – Corrientes', category: 'Instalación eléctrica completa', year: 2024, image: '/images/portfolio/parque.webp', featured: true },
+  { title: 'Supermercado TATÚ - Corrientes',             category: 'Fabricación a medida',           year: 2024, image: '/images/portfolio/tatu.webp' },
+  // { title: 'Local Comercial',                category: 'Instalación comercial',           year: 2023, image: '/images/portfolio/proyecto-3.jpg' },
+  // { title: 'Galpón Industrial',              category: 'Interior Corrientes',             year: 2023, image: '/images/portfolio/proyecto-4.jpg' },
+  // { title: 'Edificio Corporativo',           category: 'Corrientes Capital',              year: 2023, image: '/images/portfolio/proyecto-5.jpg' },
 ];
 
 export const clients = [
-  { name: 'Empresa / Organismo', logo: '' },
-  { name: 'Empresa / Organismo', logo: '' },
+  { name: 'Cosme', logo: '/images/clients/cosme-img.webp' },
+  { name: 'Electropunto', logo: '/images/clients/electropunto-img.webp' },
   { name: 'Empresa / Organismo', logo: '' },
   { name: 'Empresa / Organismo', logo: '' },
   { name: 'Empresa / Organismo', logo: '' },
@@ -83,11 +82,11 @@ export const clients = [
   // Agregar más clientes acá (máx recomendado: 12)
 ];
 
-export const team = [
-  { name: 'Nombre Apellido', role: 'Director / Ing. Electromecánico', photo: '' },
-  { name: 'Nombre Apellido', role: 'Responsable Técnico',             photo: '' },
-  { name: 'Nombre Apellido', role: 'Jefe de Obra',                    photo: '' },
-  { name: 'Nombre Apellido', role: 'Administración',                  photo: '' },
+export const staff = [
+  { photo: '/images/staff/staff-1.webp' },
+  { photo: '/images/staff/staff-2.webp' },
+  { photo: '/images/staff/staff-3.webp' },
+  { photo: '/images/staff/staff-4.webp' },
 ];
 
 export const contact = {

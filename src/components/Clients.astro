@@ -10,17 +10,17 @@ import { clients } from '../data/content';
     <div class="clients-grid reveal">
       {clients.map(c => (
         <div class="client-card">
-          {c.logo
-            ? <img src={c.logo} alt={c.name} class="client-logo" />
-            : (
-              <div class="client-logo-placeholder">
+          <div class="client-logo-container">
+            {c.logo
+              ? <img src={c.logo} alt={c.name} class="client-logo" />
+              : (
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                   <rect x="2" y="7" width="20" height="14" rx="2"/>
                   <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
                 </svg>
-              </div>
-            )
-          }
+              )
+            }
+          </div>
           <div class="client-name">{c.name}</div>
         </div>
       ))}
@@ -51,10 +51,19 @@ import { clients } from '../data/content';
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.2rem;
-    transition: background 0.3s;
+    gap: 1.8rem;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    min-height: 300px;
+    border: 1px solid rgba(212,160,23,0.08);
+  }
+  .client-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212,160,23,0.3), transparent);
   }
   .client-card::after {
     content: '';
@@ -64,30 +73,108 @@ import { clients } from '../data/content';
     background: var(--gold);
     transition: right 0.4s ease;
   }
-  .client-card:hover { background: var(--black-4); }
+  .client-card:hover {
+    background: var(--black-4);
+    border-color: rgba(212,160,23,0.15);
+    box-shadow: 0 0 20px rgba(212,160,23,0.08);
+  }
   .client-card:hover::after { right: 0; }
-
-  .client-logo {
-    width: 80px; height: 80px;
-    object-fit: contain;
+  .client-card:hover .client-logo-container {
+    border-color: rgba(212,160,23,0.4);
+    box-shadow: 0 0 30px rgba(212,160,23,0.15);
   }
 
-  .client-logo-placeholder {
-    width: 80px; height: 80px;
-    border: 1px solid rgba(212,160,23,0.15);
-    border-radius: 2px;
+  .client-logo-container {
+    width: 140px;
+    height: 140px;
+    border: 2px solid rgba(212,160,23,0.2);
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(212,160,23,0.25);
+    background: linear-gradient(135deg, rgba(212,160,23,0.02) 0%, rgba(8,8,8,0.4) 100%);
+    color: rgba(212,160,23,0.3);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .client-logo-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(212,160,23,0.1), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .client-card:hover .client-logo-container::before {
+    opacity: 1;
+  }
+
+  .client-logo {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+    filter: brightness(1) contrast(1.05);
+    transition: all 0.3s ease;
+  }
+  .client-card:hover .client-logo {
+    filter: brightness(1.1) contrast(1.1);
   }
 
   .client-name {
     font-family: var(--condensed);
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--white-dim);
+    color: var(--gold-dim);
     text-align: center;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  .client-card:hover .client-name {
+    color: var(--gold);
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    #clients {
+      padding: 4rem var(--pad-x);
+    }
+
+    .clients-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      margin-top: 2rem;
+    }
+
+    .client-card {
+      padding: 1.5rem 1rem;
+      gap: 1rem;
+      min-height: auto;
+      border: 1px solid rgba(212,160,23,0.05);
+    }
+
+    .client-logo-container {
+      width: 100px;
+      height: 100px;
+      border-width: 1.5px;
+    }
+
+    .client-name {
+      font-size: 0.65rem;
+    }
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .clients-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 </style>

@@ -1,5 +1,5 @@
 ---
-import { team } from '../data/content';
+import { staff } from '../data/content';
 ---
 <section id="team">
   <div class="container">
@@ -8,7 +8,7 @@ import { team } from '../data/content';
       <h2 class="section-title">Las personas<br>detrás de <em>OHM</em></h2>
     </div>
     <div class="team-grid reveal">
-      {team.map(member => (
+      {staff.map(member => (
         <div class="team-card">
           <div class="team-avatar">
             {member.photo
@@ -21,8 +21,6 @@ import { team } from '../data/content';
               )
             }
           </div>
-          <div class="team-name">{member.name}</div>
-          <div class="team-role">{member.role}</div>
         </div>
       ))}
     </div>
@@ -90,5 +88,30 @@ import { team } from '../data/content';
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--gold);
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    #team {
+      padding: 4rem var(--pad-x);
+    }
+
+    .team-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .team-avatar {
+      margin-bottom: 0.8rem;
+    }
+
+    .team-name {
+      font-size: 1rem;
+    }
+
+    .team-role {
+      font-size: 0.6rem;
+    }
   }
 </style>

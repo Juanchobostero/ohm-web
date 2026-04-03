@@ -35,4 +35,26 @@ import { site } from '../data/content';
     text-transform: uppercase;
     color: var(--white-dim);
   }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    footer {
+      padding: 1.5rem var(--pad-x);
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 1rem;
+    }
+
+    .footer-copy {
+      font-size: 0.6rem;
+    }
+  }
 </style>
