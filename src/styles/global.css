@@ -16,6 +16,7 @@ html { scroll-behavior: smooth; }
   --black-4:     #1e1e1e;
   --white:       #F0EDE6;
   --white-dim:   #a09a8e;
+  --dpec-green:  #25D366;
 
   --serif:       'DM Serif Display', serif;
   --hero-serif:  'Cormorant Garamond', serif;
@@ -428,6 +429,7 @@ body::before {
   border: none;
   cursor: pointer;
   padding: 0;
+  margin-right: 3px;
 }
 
 .go-to-top-btn:hover {
@@ -487,7 +489,7 @@ body::before {
 
   .go-to-top-btn {
     bottom: 1.5rem;
-    right: 6rem;
+    right: 5rem;
   }
 
   .go-to-top-btn svg {

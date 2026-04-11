@@ -1,18 +1,33 @@
 ---
+// Navbar.astro
+let scrolled = false;
 ---
-<nav id="navbar">
+
+<nav id="navbar" class:list={[{ scrolled }]}>
   <a href="#" class="nav-logo">Ω</a>
 
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="#about">Nosotros</a></li>
     <li><a href="#services">Servicios</a></li>
     <li><a href="#portfolio">Proyectos</a></li>
     <li><a href="#clients">Clientes</a></li>
     <li><a href="#team">Equipo</a></li>
+    <li class="mobile-cta-item">
+      <a href="#contact" class="nav-cta-mobile">Contacto</a>
+    </li>
   </ul>
 
-  <a href="#contact" class="nav-cta">Contacto</a>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta desktop-cta">Contacto</a>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </nav>
+
+<div class="menu-overlay" id="menuOverlay"></div>
 
 <style>
   nav {
@@ -40,6 +55,7 @@
     text-decoration: none;
     line-height: 1;
     filter: drop-shadow(0 1px 6px rgba(212,160,23,0.3));
+    z-index: 101;
   }
 
   .nav-links {
@@ -84,6 +100,66 @@
   }
   .nav-cta:hover { background: var(--gold); color: var(--black); }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 101;
+  }
+
+  /* ─── HAMBURGER ─── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+  }
+
+  .hamburger span {
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* ─── OVERLAY ─── */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
   /* ─── MOBILE ─── */
   @media (max-width: 768px) {
     nav {
@@ -95,13 +171,137 @@
       font-size: 1.5rem;
     }
 
-    .nav-links {
+    .desktop-cta {
       display: none;
     }
 
-    .nav-cta {
-      font-size: 0.65rem;
-      padding: 0.45rem 1rem;
+    .hamburger {
+      display: flex;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100vh;
+      background: rgba(8,8,8,0.98);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      transition: right 0.3s ease;
+      z-index: 100;
+      padding: 2rem;
+      margin: 0;
+      border-left: 1px solid rgba(212,160,23,0.2);
+    }
+
+    .nav-links.active {
+      right: 0;
+    }
+
+    .nav-links li {
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links.active li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .nav-links.active li:nth-child(1) { transition-delay: 0.05s; }
+    .nav-links.active li:nth-child(2) { transition-delay: 0.1s; }
+    .nav-links.active li:nth-child(3) { transition-delay: 0.15s; }
+    .nav-links.active li:nth-child(4) { transition-delay: 0.2s; }
+    .nav-links.active li:nth-child(5) { transition-delay: 0.25s; }
+    .nav-links.active li:nth-child(6) { transition-delay: 0.3s; }
+
+    .nav-links a {
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+    }
+
+    .nav-links a::after {
+      bottom: -6px;
+    }
+
+    .mobile-cta-item {
+      margin-top: 1rem;
+    }
+
+    .nav-cta-mobile {
+      font-family: var(--condensed);
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      color: var(--gold);
+      padding: 0.7rem 2rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .nav-cta-mobile:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+  }
+
+  /* ─── DESKTOP ─── */
+  @media (min-width: 769px) {
+    .mobile-cta-item {
+      display: none;
     }
   }
 </style>
+
+<script>
+  // Script para el menú hamburguesa
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const menuOverlay = document.getElementById('menuOverlay');
+  let scrolled = false;
+
+  // Scroll effect
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  // Toggle menu
+  function toggleMenu() {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+  }
+
+  // Close menu
+  function closeMenu() {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+  menuOverlay.addEventListener('click', closeMenu);
+
+  // Close menu when clicking on a link
+  const links = navLinks.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>

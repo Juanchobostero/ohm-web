@@ -1,10 +1,14 @@
 ---
 import { site } from '../data/content';
 ---
+
 <footer>
   <div class="container footer-inner">
     <div class="footer-logo">OHM</div>
     <div class="footer-copy">© {site.year} {site.name} · Corrientes, AR</div>
+    <div class="footer-credit">
+      Implementado por <a href="https://www.jotadev.com.ar/" target="_blank" rel="noopener noreferrer">JotaDev</a>
+    </div>
   </div>
 </footer>
 
@@ -19,6 +23,8 @@ import { site } from '../data/content';
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .footer-logo {
@@ -30,10 +36,45 @@ import { site } from '../data/content';
 
   .footer-copy {
     font-family: var(--condensed);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--white-dim);
+  }
+
+  .footer-credit {
+    font-family: var(--condensed);
+    font-size: 0.85rem;  /* Todavía más grande */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+  }
+
+  .footer-credit a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .footer-credit a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.2s ease;
+  }
+
+  .footer-credit a:hover {
+    color: var(--gold-light, #e6b422);
+  }
+
+  .footer-credit a:hover::after {
+    width: 100%;
   }
 
   /* ─── MOBILE ─── */
@@ -45,7 +86,7 @@ import { site } from '../data/content';
     .footer-inner {
       flex-direction: column;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.75rem;
       text-align: center;
     }
 
@@ -54,7 +95,12 @@ import { site } from '../data/content';
     }
 
     .footer-copy {
-      font-size: 0.6rem;
+      font-size: 0.7rem;  /* 🔼 También aumentado un poco */
+    }
+
+    .footer-credit {
+      font-size: 0.7rem;  /* 🔼 Aumentado en mobile */
+      margin-top: 0.25rem;
     }
   }
 </style>

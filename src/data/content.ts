@@ -11,6 +11,7 @@ export const site = {
   location: 'Corrientes, Argentina',
   year: 2026,
   whatsapp: '+549XXXXXXXXXX',   // ← reemplazar
+  instagram: 'https://www.instagram.com/ohm_electromecanica',
   email: 'ohm.ingelectromecanica@gmail.com', // ← reemplazar
   googleForm: 'https://forms.gle/2ToMMXqacap8Y9Zc8',   // ← reemplazar con el link real
 };
@@ -37,7 +38,8 @@ export const about = {
   ],
   certifications: [
     'Instalaciones bajo normas AEA 90364',
-    'Habilitados ante DPEC',
+    // 🔽 DPEC ahora es un enlace
+    { text: 'Habilitados ante DPEC', url: 'https://www.dpec.com.ar/', target: '_blank' },
   ],
 };
 
@@ -73,12 +75,14 @@ export const portfolio = [
 export const clients = [
   { name: 'Cosme', logo: '/images/clients/cosme-img.webp' },
   { name: 'Electropunto', logo: '/images/clients/electropunto-img.webp' },
-  { name: 'Empresa / Organismo', logo: '' },
-  { name: 'Empresa / Organismo', logo: '' },
-  { name: 'Empresa / Organismo', logo: '' },
-  { name: 'Empresa / Organismo', logo: '' },
-  { name: 'Empresa / Organismo', logo: '' },
-  { name: 'Empresa / Organismo', logo: '' },
+  { name: 'Baztan', logo: '/images/clients/baztan-img.webp' },
+  { name: 'Blockor', logo: '/images/clients/blockor-img.webp' },
+  { name: 'City Fitness / Gym', logo: '/images/clients/city-img.webp' },
+  { name: 'Fox Fitness / Gym', logo: '/images/clients/fox-img.webp' },
+  { name: 'Eretz / Hormicor', logo: '/images/clients/eretz-hormicor-img.webp' },
+  { name: 'Grido / Heladería', logo: '/images/clients/grido-img.webp' },
+  { name: 'Jiro Sushi', logo: '/images/clients/jiro-sushi-img.webp' },
+  { name: 'Lurra', logo: '/images/clients/lurra-img.webp' },
   // Agregar más clientes acá (máx recomendado: 12)
 ];
 

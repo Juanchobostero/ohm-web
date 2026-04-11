@@ -20,7 +20,19 @@ import { about } from '../data/content';
       <div class="box-divider"></div>
       <div class="coverage-title">Certificaciones</div>
       <ul class="coverage-list">
-        {about.certifications.map(item => <li>{item}</li>)}
+        {about.certifications.map(item => (
+          <li>
+            {typeof item === 'string' 
+              ? item 
+              : <a href={item.url} target={item.target} rel="noopener noreferrer" style={{ 
+                  color: 'var(--dpec-green)', 
+                  textDecoration: 'underline',
+                  fontWeight: 'inherit',
+                  transition: 'opacity 0.2s'
+                }}>{item.text}</a>
+            }
+          </li>
+        ))}
       </ul>
     </div>
   </div>
@@ -93,6 +105,11 @@ import { about } from '../data/content';
     border: 1px solid var(--gold);
     transform: rotate(45deg);
     flex-shrink: 0;
+  }
+
+  .coverage-list a:hover {
+    opacity: 0.8;
+    text-decoration: none;
   }
 
   .box-divider {
