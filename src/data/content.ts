@@ -65,7 +65,7 @@ export const services = [
 ];
 
 export const portfolio = [
-  { title: 'Planta Industrial – Corrientes', category: 'Instalación eléctrica completa', year: 2024, image: '/images/portfolio/parque.webp', featured: true },
+  // { title: 'Planta Industrial – Corrientes', category: 'Instalación eléctrica completa', year: 2024, image: '/images/portfolio/parque.webp', featured: true },
   { title: 'Supermercado TATÚ - Corrientes',             category: 'Fabricación a medida',           year: 2024, image: '/images/portfolio/tatu.webp' },
   // { title: 'Local Comercial',                category: 'Instalación comercial',           year: 2023, image: '/images/portfolio/proyecto-3.jpg' },
   // { title: 'Galpón Industrial',              category: 'Interior Corrientes',             year: 2023, image: '/images/portfolio/proyecto-4.jpg' },
