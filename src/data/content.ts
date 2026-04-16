@@ -5,7 +5,7 @@
 
 export const site = {
   name: 'OHM Electromecánica',
-  tagline: 'Ingeniería de Alta Tensión',
+  tagline: 'Ingeniería de Baja Tensión',
   description:
     'Soluciones en instalaciones eléctricas industriales y comerciales para las empresas más exigentes de la región. Precisión, seguridad y tecnología de vanguardia.',
   location: 'Corrientes, Argentina',
@@ -17,8 +17,8 @@ export const site = {
 };
 
 export const stats = [
-  { value: '10+',  label: 'Años de experiencia' },
-  { value: '50+',  label: 'Proyectos ejecutados' },
+  { value: '6+',  label: 'Años de experiencia' },
+  { value: '30+',  label: 'Proyectos ejecutados' },
   { value: '100%', label: 'Cumplimiento normativo' },
 ];
 
@@ -28,7 +28,7 @@ export const about = {
   titleEm: 'precisión',
   titleEnd: 'industrial',
   paragraphs: [
-    'OHM Electromecánica es una empresa especializada en el diseño, ejecución y puesta en marcha de instalaciones eléctricas de mediana y alta complejidad.',
+    'OHM Electromecánica es una empresa especializada en el diseño, ejecución y puesta en marcha de instalaciones eléctricas de baja tensión.',
     'Trabajamos con clientes corporativos e industriales en la capital y en toda la provincia de Corrientes, brindando soluciones que combinan rigor técnico, materiales de primera línea y cumplimiento estricto de normativa vigente.',
   ],
   coverage: [
@@ -37,9 +37,8 @@ export const about = {
     'Proyectos de gran envergadura a convenir',
   ],
   certifications: [
-    'Instalaciones bajo normas AEA 90364',
     // 🔽 DPEC ahora es un enlace
-    { text: 'Habilitados ante DPEC', url: 'https://www.dpec.com.ar/', target: '_blank' },
+    { text: 'Trabajamos bajo normas de la DPEC', url: 'https://www.dpec.com.ar/', target: '_blank' },
   ],
 };
 
@@ -48,7 +47,7 @@ export const services = [
     num: '01',
     name: 'Instalaciones Eléctricas Industriales',
     desc: 'Diseño y ejecución de sistemas eléctricos para plantas industriales, galpones y complejos de producción de cualquier escala.',
-    items: ['Media y baja tensión', 'Canalizaciones y bandejas', 'Puesta a tierra'],
+    items: ['Baja tensión', 'Canalizaciones y bandejas', 'Puesta a tierra'],
   },
   {
     num: '02',
@@ -66,8 +65,8 @@ export const services = [
 
 export const portfolio = [
   // { title: 'Planta Industrial – Corrientes', category: 'Instalación eléctrica completa', year: 2024, image: '/images/portfolio/parque.webp', featured: true },
-  { title: 'Supermercado TATÚ - Corrientes',             category: 'Fabricación a medida',           year: 2024, image: '/images/portfolio/tatu.webp' },
-  // { title: 'Local Comercial',                category: 'Instalación comercial',           year: 2023, image: '/images/portfolio/proyecto-3.jpg' },
+  { title: 'Supermercado - Corrientes',             category: 'Fabricación a medida',           year: 2024, image: '/images/portfolio/tatu.webp' },
+  { title: 'Particular - Ituzaingó (Corrientes)',                category: 'Instalación comercial',           year: 2023, image: '/images/portfolio/hernan-foto.webp' },
   // { title: 'Galpón Industrial',              category: 'Interior Corrientes',             year: 2023, image: '/images/portfolio/proyecto-4.jpg' },
   // { title: 'Edificio Corporativo',           category: 'Corrientes Capital',              year: 2023, image: '/images/portfolio/proyecto-5.jpg' },
 ];
