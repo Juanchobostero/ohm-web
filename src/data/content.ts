@@ -38,7 +38,7 @@ export const about = {
   ],
   certifications: [
     // 🔽 DPEC ahora es un enlace
-    { text: 'Trabajamos bajo normas de la DPEC', url: 'https://www.dpec.com.ar/', target: '_blank' },
+    { text: 'DPEC', url: 'https://www.dpec.com.ar/', target: '_blank' },
   ],
 };
 
@@ -64,11 +64,73 @@ export const services = [
 ];
 
 export const portfolio = [
-  // { title: 'Planta Industrial – Corrientes', category: 'Instalación eléctrica completa', year: 2024, image: '/images/portfolio/parque.webp', featured: true },
-  { title: 'Supermercado - Corrientes',             category: 'Fabricación a medida',           year: 2024, image: '/images/portfolio/tatu.webp' },
-  { title: 'Particular - Ituzaingó (Corrientes)',                category: 'Instalación comercial',           year: 2023, image: '/images/portfolio/hernan-foto.webp' },
-  // { title: 'Galpón Industrial',              category: 'Interior Corrientes',             year: 2023, image: '/images/portfolio/proyecto-4.jpg' },
-  // { title: 'Edificio Corporativo',           category: 'Corrientes Capital',              year: 2023, image: '/images/portfolio/proyecto-5.jpg' },
+  // { 
+  //   id: 1,
+  //   title: 'Planta Industrial – Corrientes', 
+  //   category: 'Instalación eléctrica completa', 
+  //   year: 2024, 
+  //   image: '/images/portfolio/parque.webp', 
+  //   featured: true,
+  //   images: [
+  //     '/images/portfolio/parque.webp',
+  //     '/images/portfolio/parque-detalle1.jpg',  // Agrega más fotos cuando las tengas
+  //     '/images/portfolio/parque-detalle2.jpg',
+  //     '/images/portfolio/parque-detalle3.jpg'
+  //   ]
+  // },
+  { 
+    id: 1,
+    title: 'Supermercado - Corrientes',             
+    category: 'Instalación comercial',           
+    year: 2024, 
+    image: '/images/portfolio/tatu.webp',
+    featured: false,
+    images: [
+      '/images/portfolio/tatu.webp',
+      '/images/portfolio/supermercado-1.webp',
+      '/images/portfolio/supermercado-2.webp',
+      '/images/portfolio/supermercado-3.webp',
+      '/images/portfolio/supermercado-4.webp',
+      '/images/portfolio/supermercado-5.webp',
+      '/images/portfolio/supermercado-6.webp',  
+    ]
+  },
+  { 
+    id: 2,
+    title: 'Particular - Ituzaingó (Corrientes)',                
+    category: 'Instalación residencial',           
+    year: 2023, 
+    image: '/images/portfolio/hernan-foto.webp',
+    featured: false,
+    images: [
+      '/images/portfolio/hernan-foto.webp',
+      '/images/portfolio/casa-itu_1.webp',
+      '/images/portfolio/casa-itu_2.webp',
+      '/images/portfolio/casa-itu_3.webp',
+      '/images/portfolio/casa-itu_4.webp',
+      '/images/portfolio/casa-itu_5.webp',
+      '/images/portfolio/casa-itu_6.webp',
+    ]
+  },
+  // Estos proyectos los puedes descomentar cuando tengas las imágenes
+  // { 
+  //   id: 4,
+  //   title: 'Galpón Industrial',              
+  //   category: 'Interior Corrientes',             
+  //   year: 2023, 
+  //   image: '/images/portfolio/proyecto-4.jpg',
+  //   featured: false,
+  //   images: []
+  // },
+  // { 
+  //   id: 5,
+  //   title: 'Edificio Corporativo',           
+  //   category: 'Corrientes Capital',              
+  //   year: 2023, 
+  //   image: '/images/portfolio/proyecto-5.jpg',
+  //   featured: false,
+  //   images: []
+  // },
 ];
 
 export const clients = [

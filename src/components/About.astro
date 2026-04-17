@@ -20,20 +20,28 @@ import { about } from '../data/content';
       <div class="box-divider"></div>
       <div class="coverage-title">Certificaciones</div>
       <ul class="coverage-list">
-        {about.certifications.map(item => (
-          <li>
-            {typeof item === 'string' 
-              ? item 
-              : <a href={item.url} target={item.target} rel="noopener noreferrer" style={{ 
-                  color: 'var(--dpec-green)', 
-                  textDecoration: 'underline',
-                  fontWeight: 'inherit',
-                  transition: 'opacity 0.2s'
-                }}>{item.text}</a>
-            }
-          </li>
-        ))}
-      </ul>
+      {about.certifications.map(item => (
+        <li>
+          {typeof item === 'string' 
+            ? item 
+            : <>
+                Trabajamos bajo normas de
+                <a 
+                  href={item.url} 
+                  target={item.target} 
+                  rel="noopener noreferrer" 
+                  style={{ 
+                    color: 'var(--dpec-green)', 
+                    textDecoration: 'underline',
+                    fontWeight: 'inherit',
+                    transition: 'opacity 0.2s',
+                    marginLeft: '-0.4rem'
+                  }}>{item.text}</a>
+              </>
+          }
+        </li>
+      ))}
+    </ul>
     </div>
   </div>
 </section>
