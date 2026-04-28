@@ -10,7 +10,7 @@ export const site = {
     'Soluciones en instalaciones eléctricas industriales y comerciales para las empresas más exigentes de la región. Precisión, seguridad y tecnología de vanguardia.',
   location: 'Corrientes, Argentina',
   year: 2026,
-  whatsapp: '+549XXXXXXXXXX',   // ← reemplazar
+  whatsapp: '+5493794673383',   // ← reemplazar
   instagram: 'https://www.instagram.com/ohm_electromecanica',
   email: 'ohm.ingelectromecanica@gmail.com', // ← reemplazar
   googleForm: 'https://forms.gle/2ToMMXqacap8Y9Zc8',   // ← reemplazar con el link real
@@ -140,10 +140,12 @@ export const clients = [
   { name: 'Blockor', logo: '/images/clients/blockor-img.webp' },
   { name: 'City Fitness / Gym', logo: '/images/clients/city-img.webp' },
   { name: 'Fox Fitness / Gym', logo: '/images/clients/fox-img.webp' },
-  { name: 'Eretz / Hormicor', logo: '/images/clients/eretz-hormicor-img.webp' },
+  { name: 'Hormicor', logo: '/images/clients/eretz-hormicor-img.webp' },
+  { name: 'Eretz', logo: '/images/clients/eretz-hormicor-img-2.webp' },
   { name: 'Grido / Heladería', logo: '/images/clients/grido-img.webp' },
   { name: 'Jiro Sushi', logo: '/images/clients/jiro-sushi-img.webp' },
   { name: 'Lurra', logo: '/images/clients/lurra-img.webp' },
+  { name: 'Indigo', logo: '/images/clients/indigo-img.webp' },
   // Agregar más clientes acá (máx recomendado: 12)
 ];
 
@@ -157,6 +159,6 @@ export const staff = [
 export const contact = {
   location:       'Corrientes, Argentina',
   coverage:       'Capital e interior de Corrientes',
-  schedule:       'Lun–Vie, 8:00 – 18:00 hs',
+  schedule:       'Lun–Vie, 8:00 – 17:00 hs',
   specialization: 'Industrial · Comercial · Tableros',
 };
